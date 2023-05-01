@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(31, 21, 21);
+  color: #fff;
+}
+
+.App-container {
+  display: flex;
+  justify-content: center;
+}
