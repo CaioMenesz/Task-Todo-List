@@ -10,6 +10,7 @@ function App() {
     <div className="App-container">
       <div className='App'>
         <h1>Minhas Tarefas</h1>
+        <TaskForm/>
         <Task
         title="Comprar mantimentos"
         description="Comprar pão, leite e ovos"

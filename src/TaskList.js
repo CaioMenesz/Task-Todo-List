@@ -1,23 +1,36 @@
 import './App.css';
-import './Task.jsx';
-import React from 'react';
+import React, { useState } from 'react';
+import Task from './Task';
+import TaskForm from './TaskForm';
 
-function TaskList() {
-  const tasks = [
-    { id: 1, description: 'Comprar leite' },
-    { id: 2, description: 'Pagar a conta de luz' },
-    { id: 3, description: 'Ligar para o médico' },
-  ];
+function TaskList(props) {
+  const [tasks, setTasks] = useState([]);
+
+  function addTask(newTask) {
+    setTasks([...tasks, newTask]);
+  }
+
+  function handleSubmit(newTask) {
+    addTask(newTask);
+  }
 
   return (
     <div>
+      <h1>Lista de Tarefas</h1>
+      <TaskForm onAddTask={handleSubmit} />
       <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>{task.description}</li>
+        {tasks.map((task, index) => (
+          <Task
+            key={index}
+            title={task.title}
+            description={task.description}
+            date={task.date}
+            completed={task.completed}
+          />
         ))}
       </ul>
     </div>
   );
 }
-  
-  export default TaskList;
+
+export default TaskList;
