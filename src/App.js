@@ -9,7 +9,11 @@ function App() {
   return (
     <div className="App-container">
       <div className='App'>
-        <h1>Minhas Tarefas</h1>
+        <nav className='navbar'>
+          <h1>Todo-List App</h1>
+          <ul><li><a href='/'>Documentation</a></li></ul>
+        </nav>
+        <h2>Minhas Tarefas</h2>
         <TaskForm/>
         <Task
         title="Comprar mantimentos"

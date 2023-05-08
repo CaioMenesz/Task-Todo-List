@@ -1,14 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;500;600;700&display=swap');
+
 * {
+  font-family: Dosis, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
+  font-family: ;
+  margin: 0 auto;
+  width: 90%;
   background-color: rgb(31, 21, 21);
   color: #fff;
+} 
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  padding: 20px 0px;
 }
 
-.App-container {
-  display: flex;
-  justify-content: center;
+.navbar li {
+  list-style: none;
+  color: #929292;
+}
+
+.navbar li a {
+  color: #505050;
 }
