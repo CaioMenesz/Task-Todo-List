@@ -4,10 +4,16 @@ import Task from './Task';
 import TaskForm from './TaskForm';
 
 function TaskList(props) {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks, onDelete] = useState([]);
 
-  function addTask(newTask) {
+  function addTask(newTask) { 
     setTasks([...tasks, newTask]);
+  }
+
+  function deleteTask(index) {
+    const updateTasks = [...tasks]
+    updateTasks.splice(index, 1);
+    setTasks(updateTasks);
   }
 
   function handleSubmit(newTask) {
@@ -26,6 +32,7 @@ function TaskList(props) {
             description={task.description}
             date={task.date}
             completed={task.completed}
+            onDelete={() => deleteTask(index)}
           />
         ))}
       </ul>
